@@ -58,7 +58,7 @@ export default async function Home() {
         />
          <div className="absolute bottom-10 right-10 h-12 flex items-center gap-2 max-w-[288px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="text-sm truncate">Moletom Never Stop Learning</span>
-          <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">R$ 129</span>
+          <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">R$ 139</span>
         </div>
       </Link>
     </div>
