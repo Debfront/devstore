@@ -1,17 +1,18 @@
-import {z} from 'zod'
+import { z } from "zod";
 
 const envSchema = z.object({
-    NEXT_PUBLIC_API_BASE_URL: z.string().url(),
-})
+  NEXT_PUBLIC_API_BASE_URL: z.url(),
+});
 
-const parseEnv = envSchema.safeParse(process.env)
+const parsedEnv = envSchema.safeParse(process.env);
 
-if (!parseEnv.success){
-  console.error('Invalid environmemt variables', parseEnv.error.flatten().fieldErrors)
+if (!parsedEnv.success) {
+  console.error(
+    "Invalid enviroment variables",
+    z.flattenError(parsedEnv.error).fieldErrors,
+  );
 
-
-  throw new Error('Invalid environmemt variables')
+  throw new Error("Invalid enviroment variables");
 }
 
-
-export const env = parseEnv.data
+export const env = parsedEnv.data;
